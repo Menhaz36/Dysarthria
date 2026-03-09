@@ -16,4 +16,4 @@ run: pip install -r requirements.txt on your terminal
 
 
 Backend: uvicorn main1:app --reload
-Frontend: streamlit run Frontend.py
+Frontend: streamlit run Frontend1.py
