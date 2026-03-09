@@ -2,10 +2,25 @@
 __pycache__/
 *.py[cod]
 
+huggingface_cache/
+
 # Environments
 venv/
 env/
 .conda/
-
+requirement.yml
 # Audio Temp files from your main.py
 audio.*
+.vscode/
+.env.*
+./env.*
+
+.env
+asrtry1.ipynb
+asrtry2.ipynb
+Dataset/
+
+training/
+*.wav
+readme.txt
+./asrtry1.ipynb

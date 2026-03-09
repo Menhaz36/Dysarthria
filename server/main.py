@@ -17,6 +17,10 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan)
 
+@app.get("/")
+def root():
+    return {"message": "Welcome to the ASR API. Use /transcribe endpoint to transcribe audio files."}
+
 @app.post("/transcribe")
 async def transcribe_audio(file: UploadFile = File(...)):
     # 1. Validation: Ensure it's an audio file
