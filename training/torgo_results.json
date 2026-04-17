@@ -1,0 +1,455 @@
+{
+  "dataset": "abnerh/TORGO-database",
+  "n_samples": 60,
+  "n_errors": 0,
+  "model_asr": "distil-whisper/distil-large-v3",
+  "model_llm": "llama-3.3-70b-versatile (Groq)",
+  "metrics": {
+    "raw_asr": {
+      "WER_%": 42.14,
+      "CER_%": 22.1,
+      "BLEU": 0.2028,
+      "ROUGE_L": 0.5455,
+      "edit_dist_norm": 0.3198,
+      "BERTScore_P": 0.9337,
+      "BERTScore_R": 0.9328,
+      "BERTScore_F1": 0.9331
+    },
+    "llm_repaired": {
+      "WER_%": 35.53,
+      "CER_%": 21.1,
+      "BLEU": 0.2326,
+      "ROUGE_L": 0.5396,
+      "edit_dist_norm": 0.2914,
+      "BERTScore_P": 0.9317,
+      "BERTScore_R": 0.9393,
+      "BERTScore_F1": 0.9353
+    },
+    "improvement": {
+      "WER_pp": 6.6,
+      "CER_pp": 1.01
+    }
+  },
+  "predictions": [
+    {
+      "idx": 0,
+      "reference": "day after day some new episode is reported",
+      "raw_asr": "day after day, some new episodes is reported.",
+      "formatted_asr": "Day after day, some new episodes is reported.",
+      "repaired": "day after day some new episodes are reported"
+    },
+    {
+      "idx": 1,
+      "reference": "beg that guard for one gallon of gas",
+      "raw_asr": "make that good for one gallon of gas.",
+      "formatted_asr": "Make that good for one gallon of gas.",
+      "repaired": "make that good for one gallon of gas"
+    },
+    {
+      "idx": 2,
+      "reference": "him",
+      "raw_asr": "mb",
+      "formatted_asr": "Mb",
+      "repaired": "mb"
+    },
+    {
+      "idx": 3,
+      "reference": "select",
+      "raw_asr": "selec.",
+      "formatted_asr": "SELEC.",
+      "repaired": "selec"
+    },
+    {
+      "idx": 4,
+      "reference": "although always alone we survive",
+      "raw_asr": "although always alone we survive.",
+      "formatted_asr": "Although always alone we survive.",
+      "repaired": "although always alone we survive"
+    },
+    {
+      "idx": 5,
+      "reference": "pat",
+      "raw_asr": "pat.",
+      "formatted_asr": "Pat.",
+      "repaired": "pat"
+    },
+    {
+      "idx": 6,
+      "reference": "although always again again",
+      "raw_asr": "although always, again, again, again.",
+      "formatted_asr": "Although always, again, again, again.",
+      "repaired": "although always again again again"
+    },
+    {
+      "idx": 7,
+      "reference": "sway",
+      "raw_asr": "shui.",
+      "formatted_asr": "Shui.",
+      "repaired": "shui"
+    },
+    {
+      "idx": 8,
+      "reference": "sell",
+      "raw_asr": "zheel.",
+      "formatted_asr": "Zheel.",
+      "repaired": "zheel"
+    },
+    {
+      "idx": 9,
+      "reference": "cake",
+      "raw_asr": "cake.",
+      "formatted_asr": "Cake.",
+      "repaired": "cake"
+    },
+    {
+      "idx": 10,
+      "reference": "hotel",
+      "raw_asr": "hotel",
+      "formatted_asr": "Hotel",
+      "repaired": "hotel"
+    },
+    {
+      "idx": 11,
+      "reference": "bit",
+      "raw_asr": "b",
+      "formatted_asr": "B",
+      "repaired": "b"
+    },
+    {
+      "idx": 12,
+      "reference": "yes",
+      "raw_asr": "yes.",
+      "formatted_asr": "Yes.",
+      "repaired": "yes"
+    },
+    {
+      "idx": 13,
+      "reference": "dread",
+      "raw_asr": "dudd.",
+      "formatted_asr": "DUDD.",
+      "repaired": "dudd"
+    },
+    {
+      "idx": 14,
+      "reference": "no",
+      "raw_asr": "no.",
+      "formatted_asr": "No.",
+      "repaired": "no"
+    },
+    {
+      "idx": 15,
+      "reference": "shy",
+      "raw_asr": "eshoi!",
+      "formatted_asr": "Eshoi!",
+      "repaired": "eshoi"
+    },
+    {
+      "idx": 16,
+      "reference": "ham",
+      "raw_asr": "um",
+      "formatted_asr": "um",
+      "repaired": "um"
+    },
+    {
+      "idx": 17,
+      "reference": "pay",
+      "raw_asr": "pay",
+      "formatted_asr": "pay",
+      "repaired": "pay"
+    },
+    {
+      "idx": 18,
+      "reference": "both injuries were to the same leg",
+      "raw_asr": "both injuries were to the same leg.",
+      "formatted_asr": "Both injuries were to the same leg.",
+      "repaired": "both injuries were to the same leg"
+    },
+    {
+      "idx": 19,
+      "reference": "slicker",
+      "raw_asr": "zwicko.",
+      "formatted_asr": "Zwicko.",
+      "repaired": "zwicko"
+    },
+    {
+      "idx": 20,
+      "reference": "single",
+      "raw_asr": "singles?",
+      "formatted_asr": "Singles?",
+      "repaired": "singles"
+    },
+    {
+      "idx": 21,
+      "reference": "back",
+      "raw_asr": "back.",
+      "formatted_asr": "Back.",
+      "repaired": "back"
+    },
+    {
+      "idx": 22,
+      "reference": "fitting",
+      "raw_asr": "waiting.",
+      "formatted_asr": "waiting.",
+      "repaired": "waiting"
+    },
+    {
+      "idx": 23,
+      "reference": "i just try to do my best",
+      "raw_asr": "i tried, i just tried to do my best.",
+      "formatted_asr": "I tried, I just tried to do my best.",
+      "repaired": "i tried i just tried to do my best"
+    },
+    {
+      "idx": 24,
+      "reference": "five",
+      "raw_asr": "five.",
+      "formatted_asr": "Five.",
+      "repaired": "five"
+    },
+    {
+      "idx": 25,
+      "reference": "pitting",
+      "raw_asr": "okay.",
+      "formatted_asr": "Okay.",
+      "repaired": "okay"
+    },
+    {
+      "idx": 26,
+      "reference": "pretty",
+      "raw_asr": "pretty",
+      "formatted_asr": "Pretty",
+      "repaired": "pretty"
+    },
+    {
+      "idx": 27,
+      "reference": "the misguided souls have lost their way",
+      "raw_asr": "the misguided souls have lost the way.",
+      "formatted_asr": "The misguided souls have lost the way.",
+      "repaired": "the misguided souls have lost their way"
+    },
+    {
+      "idx": 28,
+      "reference": "one validated acts of school districts",
+      "raw_asr": "one validated act of school districts.",
+      "formatted_asr": "One validated act of school districts.",
+      "repaired": "one validated act of school districts"
+    },
+    {
+      "idx": 29,
+      "reference": "lair",
+      "raw_asr": "liu.",
+      "formatted_asr": "Liu.",
+      "repaired": "liu"
+    },
+    {
+      "idx": 30,
+      "reference": "peer",
+      "raw_asr": "pugh.",
+      "formatted_asr": "Pugh.",
+      "repaired": "pugh"
+    },
+    {
+      "idx": 31,
+      "reference": "bad",
+      "raw_asr": "bad.",
+      "formatted_asr": "Bad.",
+      "repaired": "bad"
+    },
+    {
+      "idx": 32,
+      "reference": "spit",
+      "raw_asr": "bit.",
+      "formatted_asr": "Bit.",
+      "repaired": "bit"
+    },
+    {
+      "idx": 33,
+      "reference": "victor",
+      "raw_asr": "wicked.",
+      "formatted_asr": "Wicked.",
+      "repaired": "wicked"
+    },
+    {
+      "idx": 34,
+      "reference": "rich",
+      "raw_asr": "uh-uhyt!",
+      "formatted_asr": "Uh -uhyt!",
+      "repaired": "uhuhyt"
+    },
+    {
+      "idx": 35,
+      "reference": "spain",
+      "raw_asr": "spain",
+      "formatted_asr": "spain",
+      "repaired": "spain"
+    },
+    {
+      "idx": 36,
+      "reference": "thought",
+      "raw_asr": "thought.",
+      "formatted_asr": "Thought.",
+      "repaired": "thought"
+    },
+    {
+      "idx": 37,
+      "reference": "wicker",
+      "raw_asr": "wicke.",
+      "formatted_asr": "Wicke.",
+      "repaired": "wicke"
+    },
+    {
+      "idx": 38,
+      "reference": "alimony harms a divorced man's wealth",
+      "raw_asr": "alamony arms is the right man's wealth.",
+      "formatted_asr": "Alamony Arms is the right man's wealth.",
+      "repaired": "alimony is the right mans wealth"
+    },
+    {
+      "idx": 39,
+      "reference": "hate",
+      "raw_asr": "hate.",
+      "formatted_asr": "Hate.",
+      "repaired": "hate"
+    },
+    {
+      "idx": 40,
+      "reference": "it was a good win for us",
+      "raw_asr": "it was a good win for us.",
+      "formatted_asr": "It was a good win for us.",
+      "repaired": "it was a good win for us"
+    },
+    {
+      "idx": 41,
+      "reference": "snoop",
+      "raw_asr": "this is noop.",
+      "formatted_asr": "This is noop.",
+      "repaired": "this is noop"
+    },
+    {
+      "idx": 42,
+      "reference": "glitter",
+      "raw_asr": "givete. githee.",
+      "formatted_asr": "Givete. Githee.",
+      "repaired": "givete githee"
+    },
+    {
+      "idx": 43,
+      "reference": "i expect we'll bounce back this week",
+      "raw_asr": "i expect we'll bounce back this week.",
+      "formatted_asr": "I expect we'll bounce back this week.",
+      "repaired": "i expect we will bounce back this week"
+    },
+    {
+      "idx": 44,
+      "reference": "and",
+      "raw_asr": "end.",
+      "formatted_asr": "End.",
+      "repaired": "end"
+    },
+    {
+      "idx": 45,
+      "reference": "city",
+      "raw_asr": "city.",
+      "formatted_asr": "City.",
+      "repaired": "city"
+    },
+    {
+      "idx": 46,
+      "reference": "lima",
+      "raw_asr": "lima",
+      "formatted_asr": "Lima",
+      "repaired": "lima"
+    },
+    {
+      "idx": 47,
+      "reference": "write",
+      "raw_asr": "right?",
+      "formatted_asr": "Right?",
+      "repaired": "right"
+    },
+    {
+      "idx": 48,
+      "reference": "hill",
+      "raw_asr": "held",
+      "formatted_asr": "Held",
+      "repaired": "held"
+    },
+    {
+      "idx": 49,
+      "reference": "today's date february 13th",
+      "raw_asr": "today's date. yeah. it's february 13. okay, perfect.",
+      "formatted_asr": "Today's date. Yeah. It's February 13. Okay, perfect.",
+      "repaired": "todays date yeah it is february 13 okay perfect"
+    },
+    {
+      "idx": 50,
+      "reference": "fate",
+      "raw_asr": "feet",
+      "formatted_asr": "Feet",
+      "repaired": "feet"
+    },
+    {
+      "idx": 51,
+      "reference": "i was conscious all the time",
+      "raw_asr": "i was conscious all the time.",
+      "formatted_asr": "I was conscious all the time.",
+      "repaired": "i was conscious all the time"
+    },
+    {
+      "idx": 52,
+      "reference": "knot",
+      "raw_asr": "not",
+      "formatted_asr": "not",
+      "repaired": "not"
+    },
+    {
+      "idx": 53,
+      "reference": "two other cases also were under advisement",
+      "raw_asr": "two other cases also were under advisement.",
+      "formatted_asr": "Two other cases also were under advisement.",
+      "repaired": "two other cases were also under advisement"
+    },
+    {
+      "idx": 54,
+      "reference": "shear",
+      "raw_asr": "hugh.",
+      "formatted_asr": "Hugh.",
+      "repaired": "hugh"
+    },
+    {
+      "idx": 55,
+      "reference": "seven",
+      "raw_asr": "seven",
+      "formatted_asr": "seven",
+      "repaired": "seven"
+    },
+    {
+      "idx": 56,
+      "reference": "it's fun to roast marshmallows on a gas burner",
+      "raw_asr": "it's fun to roast marshmallows on a gas burner.",
+      "formatted_asr": "It's fun to roast marshmallows on a gas burner.",
+      "repaired": "its fun to roast marshmallows on a gas burner"
+    },
+    {
+      "idx": 57,
+      "reference": "if you are losing water replace it immediately",
+      "raw_asr": "if you are losing water, replace it immediately.",
+      "formatted_asr": "If you are losing water, replace it immediately.",
+      "repaired": "if you are losing water replace it immediately"
+    },
+    {
+      "idx": 58,
+      "reference": "just one side got wet",
+      "raw_asr": "just one side got wet.",
+      "formatted_asr": "Just one side got wet.",
+      "repaired": "just one side got wet"
+    },
+    {
+      "idx": 59,
+      "reference": "we rode horseback to the farm",
+      "raw_asr": "we rode horse back to that farm.",
+      "formatted_asr": "We rode horse back to that farm.",
+      "repaired": "we rode a horse back to that farm"
+    }
+  ]
+}

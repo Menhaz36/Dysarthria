@@ -20,7 +20,11 @@ asrtry1.ipynb
 asrtry2.ipynb
 Dataset/
 
-training/
+# training/
 *.wav
 readme.txt
 ./asrtry1.ipynb
+./asrtry3.ipynb
+models/
+
+main.py

@@ -59,7 +59,7 @@ print("Model loaded successfully.")
 def transcribe(audio_file):
     try:
         result=asr_model(audio_file)
-        return result #not necessary result will be a dict with 'text' key but it is the case for whisper-base
+        return result #not necessary result will be a dict with 'text' key but it is the case for whisper-
     except Exception as e:
         print(f"Error during transcription: {e}")
         raise e
