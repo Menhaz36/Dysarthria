@@ -27,22 +27,45 @@ if torch.cuda.is_available():
     torch.cuda.empty_cache()
 
 
-device =0 if torch.cuda.is_available() else -1
-torch_dtype = torch.float16 if torch.cuda.is_available() else torch.float32
-print(f"Using GPU: {torch.cuda.is_available()} using {torch_dtype}" if device == 0 else "Using CPU")
+# device =0 if torch.cuda.is_available() else -1
+# torch_dtype = torch.float16 if torch.cuda.is_available() else torch.float32
+# print(f"Using GPU: {torch.cuda.is_available()} using {torch_dtype}" if device == 0 else "Using CPU")
 
+if torch.backends.mps.is_available():
+    device = "mps"
+    torch_dtype = torch.float16
+    print("Using MPS (Apple Silicon GPU)")
+elif torch.cuda.is_available():
+    device = 0
+    torch_dtype = torch.float16
+    print("Using CUDA GPU")
+else:
+    device = -1
+    torch_dtype = torch.float32
+    print("Using CPU")
 
+import platform
+# os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
+# base = "D:/D/Dysarthria/ASR/huggingface_cache"
+
+# os.environ["HF_HOME"] = base
+# os.environ["TRANSFORMERS_CACHE"] = f"{base}/hub"
+# os.environ["HF_DATASETS_CACHE"] = f"{base}/datasets"
+# os.environ["TORCH_HOME"] = f"{base}/torch"
 
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
-base = "D:/D/Dysarthria/ASR/huggingface_cache"
+if platform.system() == "Windows":
+    base = "D:/D/Dysarthria/ASR/huggingface_cache"
+else:  # macOS / Linux
+    base = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "models")
+    base = os.path.normpath(base)  # resolves the ".." cleanly
 
 os.environ["HF_HOME"] = base
 os.environ["TRANSFORMERS_CACHE"] = f"{base}/hub"
 os.environ["HF_DATASETS_CACHE"] = f"{base}/datasets"
 os.environ["TORCH_HOME"] = f"{base}/torch"
-
 # --- Model Initialization ---
 print("Loading ASR model...")
 asr_model=pipeline(
@@ -59,7 +82,7 @@ print("Model loaded successfully.")
 def transcribe(audio_file):
     try:
         result=asr_model(audio_file)
-        return result #not necessary result will be a dict with 'text' key but it is the case for whisper-
+        return result #not necessary result will be a dict with 'text' key but it is the case for whisper-base
     except Exception as e:
         print(f"Error during transcription: {e}")
         raise e
@@ -180,10 +203,11 @@ final_prompt=ChatPromptTemplate.from_messages([
 ])
 
 # # --- Groq Setup ---
-# groq_api_key = os.getenv("groq_api_key")
+groq_api_key = os.getenv("groq_api_key")
 llm = ChatGroq(
     model="llama-3.3-70b-versatile", 
     temperature=0.0, 
+    api_key=groq_api_key
 )
 
 # --- Final Pipeline ---

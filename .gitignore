@@ -18,13 +18,17 @@ audio.*
 .env
 asrtry1.ipynb
 asrtry2.ipynb
+asrtry3.ipynb
 Dataset/
 
 # training/
-*.wav
+# *.wav
 readme.txt
 ./asrtry1.ipynb
+./asrtry2.ipynb
 ./asrtry3.ipynb
 models/
 
 main.py
+
+base.py
