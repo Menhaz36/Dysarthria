@@ -1,3 +1,14 @@
+# Dysarthria Speech Assistant Model
+
+
+https://github.com/user-attachments/assets/ad87919a-056c-475e-a5a9-023c777a506f
+
+
+
+
+
+
+
 Before running this project, ensure you have the following installed on your system:
 run: pip install -r requirements.txt on your terminal
 
