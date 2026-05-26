@@ -1,4 +1,5 @@
-from tqdm import asyncio
+import sys
+
 from transformers import pipeline
 from typing import Dict, Any
 from langchain_core.runnables import RunnableLambda
@@ -14,11 +15,20 @@ import numpy as np
 import io
 import torch
 import asyncio
-
+from huggingface_hub import login
+from pydantic import SecretStr
 
 
 print("Starting ASR pipeline setup...")
 load_dotenv() 
+
+hf_token = os.getenv("HF_TOKEN")
+os.environ["HF_HUB_DISABLE_XET"] = "1"
+
+if hf_token:
+    print("Logging into Hugging Face Hub...")
+    login(token=hf_token)
+    
 
 # Clear caches before loading
 print("Clearing caches...")
@@ -57,7 +67,7 @@ import platform
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
 if platform.system() == "Windows":
-    base = "D:/D/Dysarthria/ASR/huggingface_cache"
+    base = r"D:\D\IMPORTANT\Dysarthria\ASR\huggingface_cache"
 else:  # macOS / Linux
     base = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "models")
     base = os.path.normpath(base)  # resolves the ".." cleanly
@@ -68,6 +78,8 @@ os.environ["HF_DATASETS_CACHE"] = f"{base}/datasets"
 os.environ["TORCH_HOME"] = f"{base}/torch"
 # --- Model Initialization ---
 print("Loading ASR model...")
+
+#WHISPER MODEL
 asr_model=pipeline(
         "automatic-speech-recognition",
         model="distil-whisper/distil-large-v3",
@@ -77,6 +89,7 @@ asr_model=pipeline(
         return_timestamps="word",
 )
 print("Model loaded successfully.")
+
 
 
 def transcribe(audio_file):
@@ -203,7 +216,7 @@ final_prompt=ChatPromptTemplate.from_messages([
 ])
 
 # # --- Groq Setup ---
-groq_api_key = os.getenv("groq_api_key")
+groq_api_key = SecretStr(os.getenv("groq_api_key") or "")
 llm = ChatGroq(
     model="llama-3.3-70b-versatile", 
     temperature=0.0, 
@@ -227,7 +240,7 @@ async def process_audio(file_path: str) -> str:
 
 
 if __name__ == "__main__":
-    file_path=r"D:\D\Dysarthria\ASR\audio.mp3"
+    file_path=path = sys.argv[1] if len(sys.argv) > 1 else r"D:\D\IMPORTANT\Dysarthria\ASR\Sample_dysarthria_audip.wav"
     # Use asyncio.run() to execute the top-level async function
     result = asyncio.run(process_audio(file_path))
     print("Final Repaired Transcript:", result)

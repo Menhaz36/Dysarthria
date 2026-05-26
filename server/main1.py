@@ -1,8 +1,9 @@
-from fastapi import FastAPI, UploadFile, File, HTTPException
+from fastapi import FastAPI, UploadFile, File, HTTPException 
 import tempfile
 import os
-
+import pathlib
 from ai_pipeline1 import process_audio
+# from ai_pipeline_finetuned import process_audio 
 
 app = FastAPI(title="Dysarthria ASR Speech Repair API")
 
@@ -11,7 +12,9 @@ async def transcribe_audio(audio_file: UploadFile = File(...)):
     temp_file_path = None
     try:
         # 1. Create a temporary file to hold the uploaded audio
-        with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as temp_file:
+        # with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as temp_file:
+        ext = pathlib.Path(audio_file.filename).suffix or ".wav"
+        with tempfile.NamedTemporaryFile(delete=False, suffix=ext) as temp_file:
             content = await audio_file.read()
             temp_file.write(content)
             temp_file_path = temp_file.name

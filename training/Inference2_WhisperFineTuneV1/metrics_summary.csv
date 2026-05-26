@@ -1,0 +1,4 @@
+phase,wer,cer,mer,wil,n,bertscore_P,bertscore_R,bertscore_F1,semantic_similarity,wer_rel_imp%,cer_rel_imp%
+Phase1_Baseline_Full,2.9431,2.5602,0.813,0.8731,1654,0.7722,0.8131,0.7915,0.6144,0.0,0.0
+Phase2_Finetuned_Full,1.3797,1.4965,0.6215,0.6815,1654,0.9076,0.9229,0.914,0.8103,53.12,41.55
+Phase3_LLM_Full,1.3827,1.4995,0.622,0.682,1654,0.9074,0.9227,0.9138,0.8099,53.02,41.43

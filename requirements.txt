@@ -1,3 +1,9 @@
+--extra-index-url https://download.pytorch.org/whl/cu128
+torch
+torchvision
+
+
+
 numpy
 scipy
 scikit-learn
@@ -41,9 +47,6 @@ python-multipart
 python-dotenv
 
 
---extra-index-url https://download.pytorch.org/whl/cu128
-torch
-torchvision
 
 jiwer 
 sentence-transformers

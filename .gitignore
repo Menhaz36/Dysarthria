@@ -12,8 +12,7 @@ requirement.yml
 # Audio Temp files from your main.py
 audio.*
 .vscode/
-.env.*
-./env.*
+
 
 .env
 asrtry1.ipynb
@@ -24,11 +23,9 @@ Dataset/
 # training/
 # *.wav
 readme.txt
-./asrtry1.ipynb
-./asrtry2.ipynb
-./asrtry3.ipynb
+temp/
 models/
 
 main.py
 
-base.py
+dysar_venv/
